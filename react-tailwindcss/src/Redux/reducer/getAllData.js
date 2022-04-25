@@ -6,12 +6,15 @@ import {
 export const getAllData = createSlice({
     name: "Home",
     initialState: {
-        value: ""
+        value: []
+
     },
     reducers: {
         allData: (state, action) => {
+   
+            console.log(action,"action")
 
-            state.value = action.payload
+            state.value = [...state.value ,action.payload]
         }
     }
 })
@@ -22,6 +25,12 @@ export const {
     allData,
 } = getAllData.actions
 
+// export const incrementAsync = (amount) => (dispatch) => {
+//     setTimeout(() => {
+//       dispatch(allData(amount))
+//     }, 1000)
+//   }
+  
 
 
 
